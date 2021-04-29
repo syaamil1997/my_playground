@@ -3,6 +3,11 @@ Just a collection of my personal exploratory work
 
 Codes:
 
-A - code along projects of python course
+Axxx - code along projects of python course
+Bxxx - data analysis_self exploration
 
-B - data analysis_self exploration
+
+xFxx - function/program
+xSxx - statistics/data analysis
+
+Xnnn - Others
