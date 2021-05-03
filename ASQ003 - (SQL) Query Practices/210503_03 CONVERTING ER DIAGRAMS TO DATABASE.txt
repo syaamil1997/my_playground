@@ -1,0 +1,21 @@
+#1. mapping of reqular enity types
+## for each entity type create a table that includes simple attributes
+## eg; employee, branch, client
+
+#2. mapping of weak entity types
+## for each week entity, create a relation table that includes simple attribute
+## must also include corresponding keys
+##eg, branch supplier: branch id, supplier name, supply type
+
+#3) mapping of binary 1:1 relationship types
+## for each rela, we have to include one side of the relationship
+## as a foreign key
+### eg; for manager = table branch: +(foreign id)mgr_id
+
+#4) mapping binary 1:N relationship types
+## eg; employee = +(foreign id)super_id +(foreign id) branch_id
+
+
+# 5) mapping a binary M:N
+## create a new table for composite keys
+## eg; new table = works on = +(comp key 1) emp_id + (comp key 2) client_id +total_sales

@@ -1,0 +1,18 @@
+#####ER DIAGRAMS
+#to define a relationship of the model
+
+##components: 
+### 1) entity
+### 2) attribute [specific info about the entitity]
+### 3) primary key [ an attribute that uniquely identify and entry]
+### 4) composite attribute [made up of sub attributes]
+### 4) multi valued attribute: att that have more than one value
+### 5) Derived Att: att that can be derived from other att
+### 6) Multiple entities
+### 7) Relationships: connect entities eg; a student(entity) may take class(entity)
+### 8) Total Participation:
+### 9) Partial Participation: 
+### 10) Relationship Att: an attribute in the relationship
+### 11) Relationship Cardinality: 
+### 12) Weak Entity: a relationship to a sub entity within an entity
+ 

@@ -3,11 +3,13 @@ Just a collection of my personal exploratory work
 
 Codes:
 
-Axxx - code along projects of python course
+Axxx - code along projects
 Bxxx - data analysis_self exploration
-
 
 xFxx - function/program
 xSxx - statistics/data analysis
+
+xxPx - mainly python (pandas, geopandas, numpy, seaborn, sklearn etc)
+xxQx - mainly SQL, POP SQL or query related
 
 Xnnn - Others

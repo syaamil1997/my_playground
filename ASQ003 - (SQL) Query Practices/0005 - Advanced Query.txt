@@ -1,0 +1,75 @@
+###WILDCARD#####
+# a way of defining patterns that we want to match specific patter
+# % = any number of characters, _ = one character
+# sample question: find any client who are an LLC
+SELECT *
+FROM  client
+WHERE client_name LIKE '%LLC';
+
+
+SELECT *
+FROM  employee
+WHERE birth_date LIKE '____-10%';
+
+
+
+
+#####UNION####
+#find a list of employee and branch names
+#you can select multiple columns as long as it is consistent
+
+SELECT first_name AS 'put any name here'
+FROM employee
+UNION
+SELECT branch_name
+FROM branch;
+
+#find a list of all money spent or earned by the company
+SELECT salary
+FROM employee
+UNION
+SELECT total_sales
+FROM works_with;
+
+
+####JOINS####
+#finding each manager id for each branch
+
+SELECT employee.emp_id, employee.first_name,branch.branch_name
+FROM employee JOIN branch ON employee.emp_id = branch.mgr_id;
+
+
+
+###NESTED QUESRY###
+
+SELECT employee.first_name, employee.last_name
+FROM employee
+WHERE employee.emp_id IN (
+    SELECT works_with.emp_id
+    FROM works_with
+    WHERE works_with.total_sales >30000;
+)
+
+
+
+##find all clients who are handled by the branch
+##that michael scott manages
+#assume you know michael's id
+
+
+SELECT client.client_id, client.client_name
+FROM client
+WHERE client.branch_id = 2
+
+#OR
+
+SELECT client.client_id, client.client_name
+FROM client
+WHERE client.branch_id = (
+    SELECT branch.branch_id
+    FROM branch
+    WHERE branch.mgr_id = 102
+    LIMIT 1
+)
+
+

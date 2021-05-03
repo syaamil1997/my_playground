@@ -1,0 +1,174 @@
+CREATE TABLE student(
+    student_id INT,
+    student_name VARCHAR(20),
+    major VARCHAR(20),
+    PRIMARY KEY(student_id)
+);
+
+DESCRIBE student;
+
+#delete and modify table
+#DROP TABLE student;
+
+ALTER TABLE student ADD gpa DECIMAL(3,2);
+
+ALTER TABLE student DROP COLUMN gpa;
+
+DROP TABLE student;
+#####################################
+
+CREATE TABLE student(
+    student_id INT,
+    student_name VARCHAR(20),
+    major VARCHAR(20),
+    PRIMARY KEY(student_id)
+);
+
+SELECT * FROM student;
+#
+INSERT INTO student VALUES(1,'Jack','Biology');
+INSERT INTO student VALUES(2,'Kate','Sociology');
+
+#this is for if the student doesnt have any major
+INSERT INTO student (student_id,student_name) VALUES (3,'Ahmed');
+INSERT INTO student VALUES(4,'Michael','Architecture');
+INSERT INTO student VALUES(5,'Lily','Finance');
+
+DROP TABLE student
+
+
+------------------------------------------
+
+
+DROP TABLE student;
+
+CREATE TABLE student(
+    student_id INT,
+    student_name VARCHAR(20) NOT NULL,
+    major VARCHAR(20) UNIQUE,
+    PRIMARY KEY(student_id)
+);
+
+INSERT INTO student VALUES(1,'Jack','Biology');
+INSERT INTO student VALUES(2,'Kate','Sociology');
+INSERT INTO student VALUES (3,NULL,'Chemistry');
+INSERT INTO student VALUES(4,'Michael','Architecture');
+INSERT INTO student VALUES(5,'Lily','Finance');
+
+DROP TABLE student;
+
+SELECT * FROM student
+
+##giving a default major###
+
+CREATE TABLE student(
+    student_id INT,
+    student_name VARCHAR(20),
+    major VARCHAR(20) DEFAULT 'undecided',
+    PRIMARY KEY(student_id)
+);
+
+#having the database do it for us
+DROP TABLE student;
+
+CREATE TABLE student(
+    student_id INT AUTO_INCREMENT,
+    student_name VARCHAR(20),
+    major VARCHAR(20),
+    PRIMARY KEY(student_id)
+);
+
+INSERT INTO student (student_name,major) VALUES ('Jack','Biology');
+INSERT INTO student (student_name,major) VALUES ('Kate','SOciology');
+
+SELECT * FROM student
+
+
+
+-------------------------------------------------------
+
+
+DROP TABLE student;
+
+CREATE TABLE student(
+    student_id INT AUTO_INCREMENT,
+    student_name VARCHAR(20),
+    major VARCHAR(20),
+    PRIMARY KEY(student_id)
+);
+
+INSERT INTO student VALUES(1,'Jack','Biology');
+INSERT INTO student VALUES(2,'Kate','Sociology');
+INSERT INTO student VALUES (3,'Clair','Chemistry');
+INSERT INTO student VALUES(4,'Michael','Architecture');
+INSERT INTO student VALUES(5,'Lily','Finance');
+
+DESCRIBE student;
+
+SELECT * FROM student;
+
+####UPDATE###
+UPDATE student 
+SET major = 'Bio'
+WHERE major = 'Biology';
+
+UPDATE student 
+SET major = 'Test'
+WHERE student_id = '2';
+
+UPDATE student 
+SET major = 'Test for Or'
+WHERE student_id = '4' or '5';
+
+UPDATE student 
+SET student_name = 'Tom', major = 'undecided'
+WHERE student_id = 1;
+
+
+####all sett###
+UPDATE student 
+SET student_name = 'All Tom'
+
+
+#delete####
+DELETE FROM student
+WHERE student_id = 5;
+
+
+--------------------------------------------------------------
+
+
+
+SELECT student_id,student_name,major
+FROM student
+ORDER BY student_name DESC
+LIMIT 2;
+
+SELECT student_id,student_name,major
+FROM student
+WHERE major ='Chemistry' or major = 'Architecture';
+
+SELECT *
+FROM student
+WHERE student_name IN ('Michael','Jack','Lily');
+
+
+
+--------------------------------------------------------
+
+SELECT student_id,student_name,major
+FROM student
+ORDER BY student_name DESC
+LIMIT 2;
+
+SELECT student_id,student_name,major
+FROM student
+WHERE major ='Chemistry' or major = 'Architecture';
+
+SELECT *
+FROM student
+WHERE student_name IN ('Michael','Jack','Lily');
+
+--------------------------------------------------------
+
+

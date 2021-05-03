@@ -1,0 +1,17 @@
+#####DELETE#####
+####ON DELETE SET NULL
+# if we delete a certain reference character
+## whatever is referencing it wil be filled with null
+
+#### ON DELETE CASCADE
+# if we delete a certain reference character
+##it will delete the entire row that is referencing said char
+
+#-usually used when the square intended to be filled with null
+##is a primary key because primary key cannot be null
+
+
+#####TRIGGER#####
+#telling my query to do something when a certain requirement is met
+
+#should be written in command line
